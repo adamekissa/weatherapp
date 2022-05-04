@@ -12,7 +12,7 @@ export default function Home() {
     getWether();
   })
     async function getWether(){
-      const url = "https://api.openweathermap.org/data/2.5/weather?q=Detroit&appid=b58bf5189600b25174b09f8e22901ad9";
+      const url = "";
       fetch(url).then(response => 
         response.json().then(data => ({
             data: data,
