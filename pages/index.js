@@ -1,8 +1,37 @@
 import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
+import React, { useEffect, useState } from 'react';
+
+
 
 export default function Home() {
+  const[weda , setWeda] = useState("Yep");
+
+  useEffect(() => {
+    getWether();
+  })
+    async function getWether(){
+      const url = "https://api.openweathermap.org/data/2.5/weather?q=Detroit&appid=b58bf5189600b25174b09f8e22901ad9";
+      fetch(url).then(response => 
+        response.json().then(data => ({
+            data: data,
+            status: response.status
+        })
+      ).then(res => {
+        // res.data.weather[0].main
+        console.log(res.data)
+        // setWeda(res.data.weather[0].main)
+        let obj = {coord: res.data.coord.coord, weather: res.data.weather[0].weather, 
+          base: res.data.weather[0].base, main : res.data.weather[0].main, visibility: res.data.weather[0].visibility };
+          console.log(obj);
+        setWeda(obj.main);
+        return obj;
+      }))
+      };
+
+      const ty = getWether();
+
   return (
     <div className={styles.container}>
       <Head>
@@ -12,6 +41,8 @@ export default function Home() {
       </Head>
 
       <main className={styles.main}>
+        <h1>HEYYYYYYYYYY!!!!{weda}</h1>
+        <h1>Another one {ty.main}</h1>
         <h1 className={styles.title}>
           Welcome to <a href="https://nextjs.org">Next.js!</a>
         </h1>
