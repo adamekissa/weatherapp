@@ -1,0 +1,84 @@
+{
+  coord: { lon: -83.0458, lat: 42.3314 },
+  weather: [
+    {
+      id: 802,
+      main: 'Clouds',
+      description: 'scattered clouds',
+      icon: '03d'
+    }
+  ],
+  base: 'stations',
+  main: {
+    temp: 288.59,
+    feels_like: 287.99,
+    temp_min: 286.57,
+    temp_max: 290.38,
+    pressure: 1019,
+    humidity: 69
+  },
+  visibility: 10000,
+  wind: { speed: 7.72, deg: 40 },
+  clouds: { all: 40 },
+  dt: 1651691714,
+  sys: {
+    type: 2,
+    id: 2006979,
+    country: 'US',
+    sunrise: 1651659804,
+    sunset: 1651710864
+  },
+  timezone: -14400,
+  id: 4990729,
+  name: 'Detroit',
+  cod: 200
+}
+{
+  coord: undefined,
+  weather: undefined,
+  base: undefined,
+  main: 'Clouds',
+  visibility: undefined
+}
+{
+  coord: { lon: -83.0458, lat: 42.3314 },
+  weather: [
+    {
+      id: 802,
+      main: 'Clouds',
+      description: 'scattered clouds',
+      icon: '03d'
+    }
+  ],
+  base: 'stations',
+  main: {
+    temp: 288.59,
+    feels_like: 287.99,
+    temp_min: 286.57,
+    temp_max: 290.38,
+    pressure: 1019,
+    humidity: 69
+  },
+  visibility: 10000,
+  wind: { speed: 7.72, deg: 40 },
+  clouds: { all: 40 },
+  dt: 1651691714,
+  sys: {
+    type: 2,
+    id: 2006979,
+    country: 'US',
+    sunrise: 1651659804,
+    sunset: 1651710864
+  },
+  timezone: -14400,
+  id: 4990729,
+  name: 'Detroit',
+  cod: 200
+}
+{
+  coord: undefined,
+  weather: undefined,
+  base: undefined,
+  main: 'Clouds',
+  visibility: undefined
+}
