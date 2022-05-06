@@ -1,14 +1,15 @@
 import ReactWeather, { useOpenWeather } from 'react-open-weather';
 
-const City = () => {
+function City(){
   const { data, isLoading, errorMessage } = useOpenWeather({
-    key: 'YOUR-API-KEY',
+    key: 'f20a93028b65bc332d4524357ee92487',
     lat: '48.137154',
     lon: '11.576124',
     lang: 'en',
     unit: 'metric', // values are (metric, standard, imperial)
   });
   return (
+      <div>
     <ReactWeather
       isLoading={isLoading}
       errorMessage={errorMessage}
@@ -18,6 +19,8 @@ const City = () => {
       unitsLabels={{ temperature: 'C', windSpeed: 'Km/h' }}
       showForecast
     />
+      </div>
+    
   );
 };
 

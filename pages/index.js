@@ -3,14 +3,15 @@ import Image from 'next/image'
 import styles from '../styles/Home.module.css'
 import React, { useEffect, useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.css';
-import Card from '../public/Components/Card/Card';
+import Card from './Card/Card';
 import { weatherData } from '../public/Data/Data';
 import City from './City/City';
 
 
 
-export default function Home() {
+export default function Home({data}) {
   const[weda , setWeda] = useState("Yep");
+  const s = data.hourly;
 
   // useEffect(() => {
   //   getWether();
@@ -54,8 +55,10 @@ export default function Home() {
         <div>
           <City/>
         </div>
-        <div class="row row-cols-1 row-cols-md-4 g-4" style={{margin :"5px"}}>
-        {weatherData.map((inf)=>{ return(<Card city={inf.city} weather={inf.weather} key={inf.id}/>)})}
+        <div class="row row-cols-1 row-cols-md-5 g-4" style={{margin :"5px"}}>
+          {s.map((hourly, index) => { return <Card time={hourly.dt} temp={hourly.temp} fl={hourly.feels_like} key={index}/>})}
+        {/* <Card data={data}/> */}
+        {console.log(data)}
         </div>
       </main>
 
@@ -73,4 +76,16 @@ export default function Home() {
       </footer>
     </div>
   )
+}
+
+export async function getServerSideProps() {
+  const response = await fetch(
+    "https://api.openweathermap.org/data/2.5/onecall?lat=33.44&lon=-94.04&exclude=minutely&appid=f20a93028b65bc332d4524357ee92487"
+  );
+
+  const data = await response.json();
+  console.log(data);
+  return {
+    props: { data: data },
+  };
 }
