@@ -1,5 +1,4 @@
 
-
 function Card( {data ,time, temp, fl} ) {
   function msToTime(ms) {
     let seconds = (ms / 1000).toFixed(1);
@@ -16,12 +15,11 @@ function Card( {data ,time, temp, fl} ) {
   // const s = data.hourly;
   // const t = s.map((hourly) => { return hourly.dt})
   // console.log(t)
-  console.log(time);
     return (
 <div>
   <div class="col">
     <div class="card h-100">
-      <img src="./art.jpg" class="card-img-top" alt="Weather Icon"/>
+      <img src="./../../public/Img/art.jpg" class="card-img-top" alt="Weather Icon"/>
       <div class="card-body">
         <h5 class="card-title">Time : {hrs}</h5>
         <p class="card-text"> The temperature is {temp} but it feels like {fl} </p>
