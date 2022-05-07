@@ -1,3 +1,5 @@
+import Image from "next/dist/client/image";
+import img from "./../../public/Img/art.jpg"
 
 function Card( {data ,time, temp, fl} ) {
   function msToTime(ms) {
@@ -17,16 +19,16 @@ function Card( {data ,time, temp, fl} ) {
   // console.log(t)
     return (
 <div>
-  <div class="col">
-    <div class="card h-100">
-      <img src="./../../public/Img/art.jpg" class="card-img-top" alt="Weather Icon"/>
-      <div class="card-body">
-        <h5 class="card-title">Time : {hrs}</h5>
-        <p class="card-text"> The temperature is {temp} but it feels like {fl} </p>
-        <a href="#" class="btn btn-primary">See details</a>
+  <div className="col">
+    <div className="card h-100">
+      <Image src={img} alt="weather" />
+      <div className="card-body">
+        <h5 className="card-title">Time : {hrs}</h5>
+        <p className="card-text"> The temperature is {temp} but it feels like {fl} </p>
+        <a href="#" className="btn btn-primary">See details</a>
       </div>
-      <div class="card-footer">
-        <small class="text-muted">Last updated 3 mins ago</small>
+      <div className="card-footer">
+        <small className="text-muted">Last updated 3 mins ago</small>
       </div>
     </div>
   </div>
